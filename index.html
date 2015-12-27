@@ -10,6 +10,7 @@
 
 		<!-- JQuery CDN -->
 		<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
+		<link rel="stylesheet" href="css/bootstrap.min.css">
 
     <style type="text/css">
         @font-face {
@@ -38,23 +39,45 @@
 
 	</head>
 	<body>
-	<div class="container">
+	<div >
 	    <div id="homePage">
-		    <h1 class="eraser" > <span style="color:red">K</span><span style="color:green">o</span><span style="color:blue">L</span><span style="color:red">o</span><span style="color:green">r</span>&nbsp;<span style="color:blue">T</span><span style="color:red">r</span><span style="color:green">i</span><span style="color:blue">o</span></h1>
+		  <h1 class="eraser" > <span style="color:red">K</span><span style="color:green">o</span><span style="color:blue">L</span><span style="color:red">o</span><span style="color:green">r</span>&nbsp;<span style="color:blue">T</span><span style="color:red">r</span><span style="color:green">i</span><span style="color:blue">o</span></h1>
 		    <img src='images/regCrayonBigRotated.gif'></img>
 		    <img src='images/greenCrayonBigSoftened.gif'></img>
 		    <img src='images/blueCrayonBigRotated.gif'></img>
-		    <ul data-bind="foreach:viewList">
-              <li data-bind="text:name" class="eraser"></li>
-		    </ul>
+            <div class="class="container-fluid">
+              <div class="row">
+                <div class="col-md-2">
+                   <ul data-bind="foreach:viewList">
+                     <li data-bind="text:name, click:$parent.setView" class="eraser"></li>
+		           </ul>
+                </div>  <!-- end column -->
+                <div class="col-md-10">
+                  <div data-bind="if :isHome" >
+                    <h1>Home</h1>
+                  </div>
+                  <div data-bind="if :isRecordPlayer">
+                    <h1>Record Player</h1>
+                    <div id="redRecord"> <img src='images/redRecord.png'></img></div>
+                    <img src='images/record-player-black-and-white-simple-reduced.png'></img>
+                  </div>
+
+                  <div data-bind="if :isSignUp">
+                    <h1>Sign Up</h1>
+                  </div>
+                  <div data-bind="if :isAbout">
+                    <h1>About</h1>
+                  </div>
+                </div> <!-- end column -->
+              </div> <!-- end row -->
+            </div> <!-- end container -->
 
 
-
-
-		    <img src='images/regCrayonBigRotated.gif'></img>
-		    <img src='images/greenCrayonBigSoftened.gif'></img>
-		    <img src='images/blueCrayonBigRotated.gif'></img>
 		</div>
+      </div>
+
+
+
 		<!--
 		<div id="recordPlayer">
 		<h1 class="eraser">Record Player</h1>
