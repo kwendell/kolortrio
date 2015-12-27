@@ -40,10 +40,15 @@ var ViewModel = function() {
     var retval = "Sign Up" == self.currentView().name();
     return retval;
   });
+  this.isAbout = ko.computed(function() {
+    var retval = "About" == self.currentView().name();
+    return retval;
+  });
 
 
   // method to keep track of currently selected view.
   this.setView = function(clickedView) {
+    //alert(clickedView.name());
     self.currentView(clickedView);
   };
 };
