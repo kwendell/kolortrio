@@ -51,6 +51,12 @@ var ViewModel = function() {
     //alert(clickedView.name());
     self.currentView(clickedView);
   };
+
+
+
+  this.playSong = function() {
+           alert("playSong");
+  };
 };
 
 
