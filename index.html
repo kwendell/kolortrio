@@ -10,7 +10,6 @@
 
 		<!-- JQuery CDN -->
 		<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
-		<link rel="stylesheet" href="css/bootstrap.min.css">
 
     <style type="text/css">
         @font-face {
@@ -65,8 +64,14 @@
                   </div>
                   <div data-bind="if :isRecordPlayer">
                     <h1>Record Player</h1>
-                    <div id="redRecord"> <img src='images/redRecord.png'></img></div>
-                    <img src='images/record-player-black-and-white-simple-reduced.png'></img>
+                    <div class="row">
+                      <div class="col-md-3">
+                        <img src='images/redRecord.png'></img>
+                      </div>
+                      <div class="col-md-9">
+                        <img src='images/record-player-black-and-white-simple-reduced.png'></img>
+                      </div>
+                    </div>
                   </div>
 
                   <div data-bind="if :isSignUp">
