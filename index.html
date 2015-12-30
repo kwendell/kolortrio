@@ -47,7 +47,7 @@
 
             <img src='images/greenCrayonBigSoftened.gif'></img>
             <img src='images/regCrayonBigRotated.gif'></img>
-            <img src='images/blueCrayonBigRotated.gif'></img>
+
 
 
 
@@ -63,12 +63,14 @@
                     <h1>Home</h1>
                   </div>
                   <div data-bind="if :isRecordPlayer">
-                    <h1>Record Player</h1>
+                    <h1 class="eraser">Record Player</h1>
                     <div class="row">
                       <div class="col-md-3">
-                        <img src='images/redRecord.png'></img>
+
+                        <img  data-bind="click:  playSong" src='images/redRecord.png'></img>
+
                       </div>
-                      <div class="col-md-9">
+                      <div class="col-md-6">
                         <img src='images/record-player-black-and-white-simple-reduced.png'></img>
                       </div>
                     </div>
