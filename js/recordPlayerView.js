@@ -22,29 +22,28 @@ var RecordPlayerView = function() {
   //alert("updateView::method");
    
   };
-    var ONE_FRAME_TIME = 1000 / 60 ;
+   
   var mainloop  = function(global) {
    
 	
-	  self.updateView();
+	self.updateView();
 	
-	  
-	};
-	  var animFrame = window.requestAnimationFrame ||
+   };
+   var animFrame = window.requestAnimationFrame ||
             window.webkitRequestAnimationFrame ||
             window.mozRequestAnimationFrame    ||
             window.oRequestAnimationFrame      ||
             window.msRequestAnimationFrame     ||
             null ;
    
-var recursiveAnim = function() {
+    var recursiveAnim = function() {
         mainloop();
         animFrame( recursiveAnim );
     };
 
-    // start the mainloop
+    
     animFrame( recursiveAnim );
-//	setInterval(mainloop, 1000);
+
 
 /** Syntax
  * var Engine = (function(global) {
