@@ -35,14 +35,17 @@ var RecordPlayerView = function() {
             window.oRequestAnimationFrame      ||
             window.msRequestAnimationFrame     ||
             null ;
-   
+   if ( animFrame !== null ) {
     var recursiveAnim = function() {
         mainloop();
         animFrame( recursiveAnim );
     };
-
-    
     animFrame( recursiveAnim );
+	} else {
+	  var ONE_FRAME_TIME = 1000.0 / 60.0 ;
+      setInterval( mainloop, ONE_FRAME_TIME );
+	
+	}
 
 
 /** Syntax
