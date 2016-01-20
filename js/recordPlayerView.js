@@ -3,7 +3,20 @@ var RecordPlayerView = function() {
   var self = this;
   this.DEFAULT="DEFAULT";
   this.PLAY="PLAY";
-  this.viewState = self.DEFAULT;
+  this.viewState = self.DEFAULT
+  this.lastTime;
+  function init() {
+       
+        self.lastTime = Date.now();
+       
+    }
+   Resources.load([
+        'images/record-player-black-and-white-simple-reduced.png',
+        'images/redRecord.png'
+        
+    ]);
+	// call init callback when resource is loaded
+    Resources.onReady(init);
   this.playSong = function(data,event) {
     //console.log(event.toElement.id);
     //console.log(self.getState());
