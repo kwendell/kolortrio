@@ -54,36 +54,36 @@
             <div class="class="container-fluid">
               <div class="row">
                 <div class="col-md-2">
-                   <ul data-bind="foreach:viewList">
-                     <li data-bind="text:name, click:$parent.setView" class="eraser"></li>
-		           </ul>
+                  <ul data-bind="foreach:viewList">
+                    <li data-bind="text:name, click:$parent.setView" class="eraser"></li>
+		          </ul>
                 </div>  <!-- end column -->
                 <div class="col-md-10">
                   <div data-bind="if :isHome" >
-                    <h1>Home</h1>
+                    <h1 class="eraser">Home</h1>
                   </div>
                   <div data-bind="if :isRecordPlayer">
                     <h1 class="eraser">Record Player</h1>
-                    <div class="row">
-                      <div class="col-md-3">
+                      <div class="row">
+                        <div class="col-md-3">
 
-                        <img  data-bind="click:  recordPlayerView:playSong" src='images/redRecord.png'></img>
+                          <img  data-bind="click:  recordPlayerView.playSong" src='images/redRecord.png'></img>
 
-                      </div>
-                      <div class="col-md-6">
-                        <img src='images/record-player-black-and-white-simple-reduced.png'></img>
-                      </div>
+                        </div>
+                        <div class="col-md-6">
+                          <img src='images/record-player-black-and-white-simple-reduced.png'></img>
+                        </div>
+                      </div>  <!-- end row -->
+                    </div>  <!-- end data-bind="if: " -->
+
+                    <div data-bind="if :isSignUp">
+                      <h1 class="eraser">Sign Up</h1>
                     </div>
-                  </div>
-
-                  <div data-bind="if :isSignUp">
-                    <h1>Sign Up</h1>
-                  </div>
-                  <div data-bind="if :isAbout">
-                    <h1>About</h1>
-                  </div>
-                </div> <!-- end column -->
-              </div> <!-- end row -->
+                    <div data-bind="if :isAbout">
+                      <h1 class="eraser">About</h1>
+                    </div>
+                  </div> <!-- end column -->
+                </div> <!-- end row -->
             </div> <!-- end container -->
 
 
@@ -101,7 +101,7 @@
 -->
 
 
-    </div>
+   
 	</body>
 	 <script src="https://cdnjs.cloudflare.com/ajax/libs/knockout/3.3.0/knockout-min.js">
     </script>

@@ -34,6 +34,7 @@ var ViewModel = function() {
   });
   this.isRecordPlayer = ko.computed(function() {
     var retval = "Record Player" == self.currentView().name();
+	console.log("isRecordPlayer "+retval);
     return retval;
   });
   this.isSignUp = ko.computed(function() {

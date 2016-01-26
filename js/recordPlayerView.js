@@ -9,7 +9,7 @@ var RecordPlayerView = function() {
    
   
   
-  this.playSong = function(data,event) {
+  self.playSong = function(data,event) {
    alert("record player");
     self.viewState = self.PLAY;
   
