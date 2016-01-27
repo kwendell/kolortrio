@@ -11,14 +11,14 @@ var RecordPlayerView = function() {
   this.readyToDraw = false;
   this.canvas = null;
   this.ctx = null;
-  
+ 
     Resources.load([
 	'images/redRecord.png'
     ]);
 	
 	 function init() {
 
-self.readyToDraw=true;
+       self.readyToDraw=true;
 
     }
 	Resources.onReady(init);
@@ -44,10 +44,10 @@ self.readyToDraw=true;
  
   if (self.viewState==self.PLAY) {
   
-  } else {
+  } else if (self.viewState==self.DEFAULT) {
   
   if (self.readyToDraw==true) {
-    if (self.canvas==null) {
+    if (self.canvas==null ) {
       self.canvas = doc.getElementById('recordPlayerCanvas');
 	  
 	  
@@ -55,9 +55,15 @@ self.readyToDraw=true;
     {
 
       if (self.ctx) {
+	   
         self.ctx.drawImage(Resources.get('images/redRecord.png'), 0, 0);
+		//console.log("drawing...");
+		self.canvas=null;
+		self.ctx=null;
       } else {
 	        self.ctx = self.canvas.getContext('2d');
+			console.log("going here");
+			
 	  }
     }
 
