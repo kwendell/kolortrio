@@ -64,16 +64,12 @@
                   </div>
                   <div data-bind="if :isRecordPlayer">
                     <h1 class="eraser">Record Player</h1>
-                      <div class="row">
-                        <div class="col-md-3">
-
-                          <img  data-bind="click:  recordPlayerView.playSong" src='images/redRecord.png'></img>
-
-                        </div>
-                        <div class="col-md-6">
-                          <img src='images/record-player-black-and-white-simple-reduced.png'></img>
-                        </div>
-                      </div>  <!-- end row -->
+					<canvas id="recordPlayerCanvas" width="100" height="100"> </canvas>
+                     <!-- <img  data-bind="click:  recordPlayerView.playSong" src='images/redRecord.png'></img> -->
+                     <!-- <img src='images/record-player-black-and-white-simple-reduced.png'></img>
+					  -->
+                        
+                      
                     </div>  <!-- end data-bind="if: " -->
 
                     <div data-bind="if :isSignUp">
@@ -95,10 +91,11 @@
 		<!--
 		<div id="recordPlayer">
 		<h1 class="eraser">Record Player</h1>
-		<div id="redRecord"> <img src='images/redRecord.png'></img></div>
-		  <img src='images/record-player-black-and-white-simple-reduced.png'></img>
+		-->
+		<div style="display:none;"> <img src='images/redRecord.png' id="redRecord"></img></div>
+		  <!--<img src='images/record-player-black-and-white-simple-reduced.png'></img>-->
 		</div>
--->
+
 
 
    
