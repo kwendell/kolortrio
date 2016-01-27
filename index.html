@@ -59,10 +59,10 @@
 		          </ul>
                 </div>  <!-- end column -->
                 <div class="col-md-10">
-                  <div data-bind="if :isHome" >
+                  <div data-bind="visible :isHome" >
                     <h1 class="eraser">Home</h1>
                   </div>
-                  <div data-bind="if :isRecordPlayer">
+                  <div data-bind="visible :isRecordPlayer">
                     <h1 class="eraser">Record Player</h1>
 					<canvas id="recordPlayerCanvas" width="100" height="100"> </canvas>
                      <!-- <img  data-bind="click:  recordPlayerView.playSong" src='images/redRecord.png'></img> -->
@@ -72,10 +72,10 @@
                       
                     </div>  <!-- end data-bind="if: " -->
 
-                    <div data-bind="if :isSignUp">
+                    <div data-bind="visible :isSignUp">
                       <h1 class="eraser">Sign Up</h1>
                     </div>
-                    <div data-bind="if :isAbout">
+                    <div data-bind="visible :isAbout">
                       <h1 class="eraser">About</h1>
                     </div>
                   </div> <!-- end column -->
