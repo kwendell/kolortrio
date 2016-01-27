@@ -58,8 +58,8 @@ var RecordPlayerView = function() {
 	   
         self.ctx.drawImage(Resources.get('images/redRecord.png'), 0, 0);
 		//console.log("drawing...");
-		self.canvas=null;
-		self.ctx=null;
+		//self.canvas=null;
+		//self.ctx=null;
       } else {
 	        self.ctx = self.canvas.getContext('2d');
 			console.log("going here");
