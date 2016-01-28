@@ -11,6 +11,7 @@ var RecordPlayerView = function() {
   this.readyToDraw = false;
   this.canvas = null;
   this.ctx = null;
+
  
     Resources.load([
 	'images/redRecord.png'
@@ -19,6 +20,7 @@ var RecordPlayerView = function() {
 	 function init() {
 
        self.readyToDraw=true;
+	 
 
     }
 	Resources.onReady(init);
@@ -49,20 +51,20 @@ var RecordPlayerView = function() {
   if (self.readyToDraw==true) {
     if (self.canvas==null ) {
       self.canvas = doc.getElementById('recordPlayerCanvas');
+	  self.canvas.addEventListener('click', function(event) {alert(event); }, false);
+	  
 	  
 	  
 	} else 
     {
 
       if (self.ctx) {
-	   
+	
         self.ctx.drawImage(Resources.get('images/redRecord.png'), 0, 0);
-		//console.log("drawing...");
-		//self.canvas=null;
-		//self.ctx=null;
+		
       } else {
 	        self.ctx = self.canvas.getContext('2d');
-			console.log("going here");
+			
 			
 	  }
     }
