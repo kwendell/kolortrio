@@ -51,7 +51,7 @@ var RecordPlayerView = function() {
   if (self.readyToDraw==true) {
     if (self.canvas==null ) {
       self.canvas = doc.getElementById('recordPlayerCanvas');
-	  self.canvas.addEventListener('click', function(event) {alert(event); }, false);
+	  self.canvas.addEventListener('click', function(event) {alert(event.clientX); }, false);
 	  
 	  
 	  
