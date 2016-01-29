@@ -11,6 +11,7 @@ var RecordPlayerView = function() {
   this.readyToDraw = false;
   this.canvas = null;
   this.ctx = null;
+  this.rectangle1 = null;
 
  
     Resources.load([
@@ -20,6 +21,9 @@ var RecordPlayerView = function() {
 	 function init() {
 
        self.readyToDraw=true;
+	   //self.rectangle1 = new Rectangle(0,0,10,10);
+	   //alert(self.rectangle1.containsPoint(2,2));
+	   
 	 
 
     }
