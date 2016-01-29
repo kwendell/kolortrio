@@ -1,5 +1,6 @@
-var RecordPlayerView = function() {
+var RecordPlayerView = function(viewModel) {
   this.name = ko.observable("Record Player");
+  this.viewModel=viewModel;
   var self = this;
   this.DEFAULT="DEFAULT";
   this.PLAY="PLAY";
@@ -51,8 +52,9 @@ var RecordPlayerView = function() {
   };
   
   this.updateView = function() {
- 
+  if (self.viewModel.isRecordPlayer()) {
   if (self.viewState==self.PLAY) {
+  //console.log("PLAY "+self.viewModel.isRecordPlayer());
   
   } else if (self.viewState==self.DEFAULT) {
   
@@ -67,6 +69,7 @@ var RecordPlayerView = function() {
 									 var relX =event.clientX-canvasRect.left;
 									 
 								     var contains = self.rectangle1.containsPoint(relX,relY);
+									 if (contains) {self.viewState=self.PLAY;}
 								      }, 
 									 false);
 	  
@@ -92,8 +95,8 @@ var RecordPlayerView = function() {
   }
 
   
-  //self.ctx.drawImage(self.recordImg, 20, 20);
-  //console.log(self.recordImg.src);
+  
+  }
   }
    
   };
