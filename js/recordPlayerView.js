@@ -59,7 +59,16 @@ var RecordPlayerView = function() {
   if (self.readyToDraw==true) {
     if (self.canvas==null ) {
       self.canvas = doc.getElementById('recordPlayerCanvas');
-	  self.canvas.addEventListener('click', function(event) {alert(event.clientX); }, false);
+	  self.canvas.addEventListener('click', 
+	                               function(event) {
+								   
+								     var canvasRect =  self.canvas.getBoundingClientRect();
+									 var relY = event.clientY-canvasRect.top;
+									 var relX =event.clientX-canvasRect.left;
+									 
+								     var contains = self.rectangle1.containsPoint(relX,relY);
+								      }, 
+									 false);
 	  
 	  
 	  
@@ -69,8 +78,8 @@ var RecordPlayerView = function() {
       if (self.ctx) {
 	    //alert(Resources.get('images/redRecord.png').width);
         self.ctx.drawImage(Resources.get('images/redRecord.png'), 0, 0);
-		self.rectangle1.x=0;
-		self.rectangle1.y=0;
+		//self.rectangle1.x=0;
+		//self.rectangle1.y=0;
 		//console.log(self.rectangle1.width);
 		
       } else {
