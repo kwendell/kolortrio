@@ -9,7 +9,7 @@ var ViewModel = function() {
   // Constructor invocations for each of the constituent views Home,
   // Map and History.
   var homeView = new HomeView();
-  var recordPlayerView = new RecordPlayerView();
+  var recordPlayerView = new RecordPlayerView(self);
   var aboutView = new AboutView();
   var signUpView = new SignUpView();
 
@@ -34,7 +34,7 @@ var ViewModel = function() {
   });
   this.isRecordPlayer = ko.computed(function() {
     var retval = "Record Player" == self.currentView().name();
-	
+
     return retval;
   });
   this.isSignUp = ko.computed(function() {
